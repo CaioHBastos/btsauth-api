@@ -84,10 +84,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-        jwtAccessTokenConverter.setSigningKey("btsfood");
+        jwtAccessTokenConverter.setSigningKey("89a7sd89f7as98f7dsa98fds7fd89sasd9898asdf98s");
 
         return jwtAccessTokenConverter;
     }
+
     private TokenGranter tokenGranter(AuthorizationServerEndpointsConfigurer endpoints) {
         var pkceAuthorizationCodeTokenGranter = new PkceAuthorizationCodeTokenGranter(endpoints.getTokenServices(),
                 endpoints.getAuthorizationCodeServices(), endpoints.getClientDetailsService(),
