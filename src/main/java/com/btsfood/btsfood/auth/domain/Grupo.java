@@ -2,9 +2,7 @@ package com.btsfood.btsfood.auth.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
@@ -21,10 +19,8 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString
-@RequiredArgsConstructor
 @Entity
-public class Usuario {
+public class Grupo {
 
     @EqualsAndHashCode.Include
     @Id
@@ -34,24 +30,17 @@ public class Usuario {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
-    private String email;
-
-    @Column(nullable = false)
-    private String senha;
-
     @ManyToMany
-    @JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "grupo_id"))
-    @ToString.Exclude
-    private Set<Grupo> grupos = new HashSet<>();
+    @JoinTable(name = "grupo_permissao", joinColumns = @JoinColumn(name = "grupo_id"),
+            inverseJoinColumns = @JoinColumn(name = "permissao_id"))
+    private Set<Permissao> permissoes = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id);
+        Grupo grupo = (Grupo) o;
+        return Objects.equals(id, grupo.id);
     }
 
     @Override
