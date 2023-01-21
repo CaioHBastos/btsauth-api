@@ -1,4 +1,4 @@
-package com.btsfood.btsfood.auth;
+package com.btsfood.btsfood.auth.core;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

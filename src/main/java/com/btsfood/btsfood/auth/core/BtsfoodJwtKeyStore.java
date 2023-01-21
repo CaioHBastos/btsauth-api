@@ -1,4 +1,4 @@
-package com.btsfood.btsfood.auth;
+package com.btsfood.btsfood.auth.core;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.btsfood.btsfood.auth;
+package com.btsfood.btsfood.auth.core;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
