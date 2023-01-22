@@ -46,7 +46,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                     .withClient("btsfood-web")
                     .secret(passwordEncoder.encode("web123"))
                     .authorizedGrantTypes("password", "refresh_token")
-                    .scopes("write", "read")
+                    .scopes("WRITE", "READ")
                     .accessTokenValiditySeconds(60 * 60 * 6) // 6 horas
                     .refreshTokenValiditySeconds(60 * 24 * 60 * 60) //60 dias
 
@@ -54,21 +54,21 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                     .withClient("faturamento")
                     .secret(passwordEncoder.encode("faturamento123"))
                     .authorizedGrantTypes("client_credentials")
-                    .scopes("write", "read")
+                    .scopes("WRITE", "READ")
 
                 .and()
                     .withClient("foodanalytics")
                     .secret(passwordEncoder.encode(""))
                     .authorizedGrantTypes("authorization_code")
                     .redirectUris("http://aplicacao-cliente")
-                    .scopes("write", "read")
+                    .scopes("WRITE", "READ")
 
                 //Não recomendado, é um legado
                 .and()
                     .withClient("webadmin")
                     .authorizedGrantTypes("implicit")
                     .redirectUris("http://aplicacao-cliente")
-                    .scopes("write", "read")
+                    .scopes("WRITE", "READ")
 
                 .and()
                     .withClient("checktoken")
